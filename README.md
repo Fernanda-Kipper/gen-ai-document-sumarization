@@ -10,15 +10,12 @@
 
 The purpose of this work is to explore the potential of generative AIs, in particular those based on the Transformer architecture, to automate the process of summarizing and summarizing documents. The main objective is to study and explore existing open source artificial intelligence (AI) models, with a focus on generative AIs, aiming for the ability to perform analysis, understand context and generate summaries for unstructured documents available on the internet.
 
-## Steps
+## Work Steps
 
--[ ] Extract text from documents
-
--[ ] Preprocess text
-
--[ ] Test with different models
-
--[ ] Fine-tune the pretrained model with best performance
+- [ ] Extract text from documents
+- [ ] Preprocess text
+- [ ] Test with different models
+- [ ] Fine-tune the pretrained model with best performance
 
 ## How to run
 
