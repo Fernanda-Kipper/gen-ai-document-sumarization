@@ -1,4 +1,4 @@
-# Bachelor of Computer Science
+# Bachelor Thesis - Computer Science
 
 ## Exploring Open Source Generative AI models for understanding and summarizing documents
 
