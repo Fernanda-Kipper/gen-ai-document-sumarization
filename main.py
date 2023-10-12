@@ -1,15 +1,26 @@
+# from PyPDF2 import PdfReader
+from pypdf import PdfReader
 
-from PyPDF2 import PdfReader
-from transformers import pipeline
+from models.bart import create_bart_summarizer
 
-reader = PdfReader('./inputs/gans.pdf')
-  
-print(len(reader.pages))
-  
-page = reader.pages[0]
+def extract_text(filename, max_length_sequence):
+    reader = PdfReader('./resource/inputs/' + filename)
+    extracted_text = []
 
-text = page.extract_text()
+    for page in reader.pages:
+        text = page.extract_text()
+        extracted_text.append(text)
 
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+    segments = []
+    for text in extracted_text:
+        for i in range(0, len(text), max_length_sequence):
+            segment = text[i:i + max_length_sequence]
+            segments.append(segment)
 
-print(summarizer(text, max_length=130, min_length=30, do_sample=False))
+    return segments
+
+text = extract_text('once-upon-a-time-test.pdf', 1024)
+bart_summarizer = create_bart_summarizer()
+
+
+print(bart_summarizer(text, max_length=130, min_length=30, do_sample=False))
