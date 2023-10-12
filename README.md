@@ -19,6 +19,10 @@ The purpose of this work is to explore the potential of generative AIs, in parti
 - [ ] Test with different models
 - [ ] Fine-tune the pretrained model with best performance
 
+## How it Works
+
+> WIP
+
 ## How to run
 
 1. You need to have Python V3 installed
