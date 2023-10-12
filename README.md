@@ -27,11 +27,19 @@ The purpose of this work is to explore the potential of generative AIs, in parti
 
 1. You need to have Python V3 installed
 
+2. If you are in MacOs, run the following command
+
+```bash
+$ xcode-select --install
+$ pip3 install --upgrade pip
+$ pip3 install --upgrade setuptools
+``````
+
 2. Run the following command
 
 ```bash
-pip install
-python main.py
+pip3 install
+python3 main.py
 ```
 
 ## How to use this work
