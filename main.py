@@ -31,7 +31,7 @@ def extract_text_recursive(docx_json):
     return text_list
 
 def extract_text_from_pdf(filename):
-    reader = PdfReader('./resource/inputs/' + filename)
+    reader = PdfReader('./inputs/' + filename)
     extracted_text = []
 
     for page in reader.pages:
@@ -41,7 +41,7 @@ def extract_text_from_pdf(filename):
     return extracted_text
 
 def extract_text_from_docx(filename):
-    document = docx.Document('./resource/inputs/' + filename)
+    document = docx.Document('./inputs/' + filename)
     my_doc_as_json = simplify(document)
 
     extracted_text = extract_text_recursive(my_doc_as_json)
