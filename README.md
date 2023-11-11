@@ -28,6 +28,8 @@ For this, we will use encoder-decoder models, following the architecture propose
     - [ ] BART
     - [ ] Pegasus
     - [ ] T5
+    - [ ] mT5
+    - [ ] mBART
 - [ ] Evaluate model performance
     - [ ] rouge score
 - [ ] Fine-tune the pretrained model with best performance
