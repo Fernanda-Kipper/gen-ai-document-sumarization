@@ -8,7 +8,7 @@ def create_t5_tokenizer():
     return tokenizer
 
 def create_t5_summarizer():
-    tokenizer = create_bart_tokenizer()
+    tokenizer = create_t5_tokenizer()
     model = T5ForConditionalGeneration.from_pretrained(model_name)
     t5_summarizer = pipeline("summarization", model=model, tokenizer=tokenizer)
     return t5_summarizer
