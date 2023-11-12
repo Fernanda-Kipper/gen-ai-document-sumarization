@@ -4,7 +4,7 @@ from transformers import MT5Tokenizer, MT5ForConditionalGeneration
 model_name = "google/mt5-small"
 
 def create_mt5_tokenizer():
-    tokenizer = MT5Tokenizer.from_pretrained(model_name)
+    tokenizer = MT5Tokenizer.from_pretrained(model_name, padding='max-length', truncation=True)
     return tokenizer
 
 def create_mt5_summarizer():

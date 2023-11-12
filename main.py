@@ -48,8 +48,6 @@ def extract_text_from_docx(filename):
     my_doc_as_json = simplify(document)
 
     extracted_text = extract_text_recursive(my_doc_as_json)
-    print(extracted_text)
-
     return extracted_text
 
 def concat_summaries(summaries_list):
@@ -59,23 +57,24 @@ def concat_summaries(summaries_list):
     return final_summary
 
 def calculate_max_length_of_summary(text_list):
-    min_length = 1024
+    min_text_length = 1024
     for text in text_list:
-        if(len(text) < min_length):
-            min_length = len(text)
-    return min_length
+        if(len(text.strip()) < min_text_length):
+            min_text_length = len(text.strip())
+    return int(min_text_length/2)
 
 raw_text = extract_text_from_pdf('transformers.pdf')
 raw_text = extract_text_from_docx('once-upon-a-time-test.docx')
 processed_text = break_text_in_sequences(raw_text, 1024)
-max_length = calculate_max_length_of_summary(processed_text)
-min_length = int(max_length / 2)
+max_length =  calculate_max_length_of_summary(processed_text)
+print(max_length)
+min_length = int(max_length/2)
 
-bart_summarizer = create_bart_summarizer()
+# bart_summarizer = create_bart_summarizer()
 # mt5_summarizer = create_mt5_summarizer()
 t5_summarizer = create_t5_summarizer()
-pegasus_summarizer = create_pegasus_summarizer()
+# pegasus_summarizer = create_pegasus_summarizer()
 
-# print(concat_summaries(mt5_summarizer(raw_text, max_length=130, min_length=30, do_sample=False)))
-# print(concat_summaries(bart_summarizer(processed_text, max_length=130, min_length=30, do_sample=False)))
+# print(concat_summaries(mt5_summarizer(raw_text,max_length=max_length, min_length=min_length, do_sample=False)))
+# print(concat_summaries(bart_summarizer(processed_text, max_length=max_length, min_length=min_length,do_sample=False)))
 print(concat_summaries(t5_summarizer(processed_text,max_length=max_length, min_length=min_length, do_sample=False)))

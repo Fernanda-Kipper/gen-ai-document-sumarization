@@ -4,7 +4,7 @@ from transformers import PegasusTokenizer, PegasusForConditionalGeneration
 model_name = "google/pegasus-xsum"
 
 def create_pegasus_tokenizer():
-    tokenizer = PegasusTokenizer.from_pretrained(model_name)
+    tokenizer = PegasusTokenizer.from_pretrained(model_name, padding='max-length', truncation=True)
     return tokenizer
 
 def create_pegasus_summarizer():
