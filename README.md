@@ -21,17 +21,18 @@ For this, we will use encoder-decoder models, following the architecture propose
     - [x] PDF
     - [x] DOCX
     - [ ] PNG / JPEG
-- [ ] Preprocess text
+- [x] Preprocess text
     - [x] Normalize sequences length
-    - [ ] Tokenizer´s
+    - [x] Tokenizer´s
 - [ ] Test with different models
-    - [ ] BART
-    - [ ] Pegasus
-    - [ ] T5
-    - [ ] mT5
+    - [x] BART
+    - [x] Pegasus
+    - [x] T5
+    - [x] mT5
     - [ ] mBART
 - [ ] Evaluate model performance
     - [ ] rouge score
+- [ ] Choose Datasets for Fine-tuning
 - [ ] Fine-tune the pretrained model with best performance
 
 ## How it Works
