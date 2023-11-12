@@ -4,7 +4,7 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration
 model_name = "t5-small"
 
 def create_t5_tokenizer():
-    tokenizer = T5Tokenizer.from_pretrained(model_name)
+    tokenizer = T5Tokenizer.from_pretrained(model_name, padding='max_length')
     return tokenizer
 
 def create_t5_summarizer():
