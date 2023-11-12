@@ -52,13 +52,12 @@ For this, we will use encoder-decoder models, following the architecture propose
 $ xcode-select --install
 $ pip3 install --upgrade pip
 $ pip3 install --upgrade setuptools
-$ pip3 install requirements.txt
 ``````
 
 2. Run the following command
 
 ```bash
-pip3 install
+$ pip3 install requirements.txt
 python3 main.py
 ```
 
