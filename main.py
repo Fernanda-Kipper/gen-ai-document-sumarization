@@ -5,6 +5,7 @@ import docx
 from simplify_docx import simplify
 
 from models.bart import create_bart_summarizer
+from models.mt5 import create_mt5_summarizer
 
 def break_text_in_sequences(extracted_text,max_length_sequence):
     segments = []
@@ -53,5 +54,6 @@ def extract_text_from_docx(filename):
 raw_text = extract_text_from_docx('once-upon-a-time-test.docx')
 processed_text = break_text_in_sequences(raw_text, 1024)
 bart_summarizer = create_bart_summarizer()
+mt5_summarizer = create_mt5_summarizer()
 
-print(bart_summarizer(processed_text, max_length=130, min_length=30, do_sample=False))
+print(mt5_summarizer(processed_text, max_length=130, min_length=30, do_sample=False))

@@ -1,7 +1,7 @@
 from transformers import pipeline
 from transformers import MT5Tokenizer, MT5ForConditionalGeneration
 
-model_name = "mt5-small"
+model_name = "google/mt5-small"
 
 def create_mt5_tokenizer():
     tokenizer = MT5Tokenizer.from_pretrained(model_name)
