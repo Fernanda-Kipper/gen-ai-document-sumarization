@@ -17,10 +17,9 @@ For this, we will use encoder-decoder models, following the architecture propose
 
 ## Work Steps
 
-- [ ] Extract text from documents
+- [x] Extract text from documents
     - [x] PDF
     - [x] DOCX
-    - [ ] PNG / JPEG
 - [x] Preprocess text
     - [x] Normalize sequences length
     - [x] Tokenizer´s
@@ -34,6 +33,10 @@ For this, we will use encoder-decoder models, following the architecture propose
     - [ ] rouge score
 - [ ] Choose Datasets for Fine-tuning
 - [ ] Fine-tune the pretrained model with best performance
+
+## NEXT LEVEL
+
+- [ ] OCR
 
 ## How it Works
 
