@@ -11,8 +11,9 @@ model = "t5-small"
 prefix = "summarize: "
 
 tokenizer = AutoTokenizer.from_pretrained(model)
-patent_texts = load_dataset("big_patent", codes=["f"], split='train')
-patent_texts = patent_texts.train_test_split(test_size=0.2)
+dataset = load_dataset("big_patent", "d")
+patent_texts = dataset["train"]
+train_dataset = dataset["validation"]
 
 def preprocess_function(examples):
     inputs = [prefix + doc for doc in examples["description"]]
@@ -22,7 +23,6 @@ def preprocess_function(examples):
 
     model_inputs["labels"] = labels["input_ids"]
     return model_inputs
-
 
 def compute_metrics(eval_pred):
     predictions, labels = eval_pred
@@ -38,6 +38,7 @@ def compute_metrics(eval_pred):
     return {k: round(v, 4) for k, v in result.items()}
 
 tokenized_patents = patent_texts.map(preprocess_function, batched=True)
+tokenized_eval = train_dataset.map(preprocess_function, batched=True)
 
 data_collator = DataCollatorForSeq2Seq(tokenizer=tokenizer, model=model)
 
@@ -47,8 +48,8 @@ training_args = Seq2SeqTrainingArguments(
     output_dir="t5_summarizer_model",
     evaluation_strategy="epoch",
     learning_rate=2e-5,
-    per_device_train_batch_size=16,
-    per_device_eval_batch_size=16,
+    per_device_train_batch_size=8,
+    per_device_eval_batch_size=8,
     weight_decay=0.01,
     save_total_limit=3,
     num_train_epochs=4,
@@ -59,11 +60,13 @@ training_args = Seq2SeqTrainingArguments(
 trainer = Seq2SeqTrainer(
     model=model,
     args=training_args,
-    train_dataset=tokenized_patents["train"],
-    eval_dataset=tokenized_patents["test"],
+    train_dataset=tokenized_patents,
+    eval_dataset=tokenized_eval,
     tokenizer=tokenizer,
     data_collator=data_collator,
-    compute_metrics=compute_metrics,
+    compute_metrics=compute_metrics
 )
+
+trainer.model.config.max_split_size_mb = 128 
 
 trainer.train()
