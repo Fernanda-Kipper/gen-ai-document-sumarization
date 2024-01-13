@@ -6,7 +6,7 @@
 
 [![Generic badge](https://img.shields.io/badge/STATUS-WIP-yellow.svg)](https://shields.io/)
 
-[![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ecrtccypWJBdKKduqjiIvPkgLQwTAyYO?usp=sharing)
+[![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12JCwt5OXmqJJYXUFHNGXYuiBeneabz-E?usp=sharing)
 
 The purpose of this work is to explore the potential of generative AIs, in particular those based on the Transformer architecture, to automate the process of summarizing content of documents. The main objective is to study and explore existing open source artificial intelligence (AI) models, with a focus on generative AIs, aiming for the ability to perform analysis, understand context and generate summaries for unstructured documents available on the internet.
 
@@ -30,8 +30,9 @@ For this, we will use encoder-decoder models, following the architecture propose
     - [x] mT5
 - [ ] Evaluate model performance
     - [ ] rouge score
-- [ ] Choose Datasets for Fine-tuning
+- [x] Choose Datasets for Fine-tuning
 - [ ] Fine-tune the pre-trained model with best performance
+    - [ ] T5
 
 ## NEXT LEVEL
 
