@@ -1,12 +1,10 @@
 # Bachelor Thesis - Computer Science
 
 ## Exploring Open Source Generative AI models for understanding and summarizing documents
-
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-
 [![Generic badge](https://img.shields.io/badge/STATUS-WIP-yellow.svg)](https://shields.io/)
 
-[![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12JCwt5OXmqJJYXUFHNGXYuiBeneabz-E?usp=sharing)
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 The purpose of this work is to explore the potential of generative AIs, in particular those based on the Transformer architecture, to automate the process of summarizing content of documents. The main objective is to study and explore existing open source artificial intelligence (AI) models, with a focus on generative AIs, aiming for the ability to perform analysis, understand context and generate summaries for unstructured documents available on the internet.
 
@@ -27,12 +25,13 @@ For this, we will use encoder-decoder models, following the architecture propose
     - [x] BART
     - [x] Pegasus
     - [x] T5
-    - [x] mT5
+    - [x] GPT-2
 - [ ] Evaluate model performance
     - [ ] rouge score
 - [x] Choose Datasets for Fine-tuning
 - [ ] Fine-tune the pre-trained model with best performance
-    - [ ] T5
+    - [ ] T5 [![Open T5 Training in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12JCwt5OXmqJJYXUFHNGXYuiBeneabz-E?usp=sharing)
+    - [ ] BART [![Open Bart Training in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nG6EjN2E0hAga50aAx4plcP7tpk6zVmc?ouid=116455225505048388373&usp=drive_link)
 
 ## NEXT LEVEL
 
